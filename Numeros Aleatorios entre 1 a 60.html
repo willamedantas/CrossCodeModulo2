@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Numeros Aleatorios</title>
+  </head>
+  <body>
+	<h1>Números aleatórios</h1>
+	<div id="resposta"></div>
+	
+	<script type="text/javascript">
+	
+		var div = document.getElementById("resposta");		
+		
+		var contador = 0;
+		var lista = new Array();
+		var aleatorio = 0;
+		
+		while(contador < 6)
+		{
+		  aleatorio = Math.floor(Math.random() * 60);
+		  if(lista.indexOf(aleatorio) === -1 || lista.length === 0){
+			lista.push(aleatorio);
+			contador = contador + 1;
+		  }
+		}
+		
+		div.innerHTML = lista;
+
+	</script>
+  </body>
+</html>
