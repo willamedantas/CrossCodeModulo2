@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Ordenando Array</title>
+  </head>
+  <body>
+	<h1>Ordenando Array</h1>
+	<div>Array Desordenado: [10, 3, 2, 4, 20, 11]</div>
+	<div id="resposta"></div>
+	
+	<script type="text/javascript">
+	
+		var div = document.getElementById("resposta");
+		var vetor =  [10, 3, 2, 4, 20, 11];
+		
+		var aux, i, j = 0;
+		
+	
+		for(j=6; j>=1; j--){
+			for(i=0; i<j; i++){
+				if(vetor[i] > vetor[i+1]){
+					aux=vetor[i];
+					vetor[i]=vetor[i+1];
+					vetor[i+1]=aux;
+				}
+			}
+		}
+		
+		div.innerHTML = "Array ordenado: [" + vetor + "]";
+
+	</script>
+  </body>
+</html>
