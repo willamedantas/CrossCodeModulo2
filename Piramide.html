@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Maior Valor Array</title>
+  </head>
+  <body>
+	<h2> Pirâmide </h2>
+	
+	<script type="text/javascript">
+		
+		var tamanho = 9;
+        var simbolo = 1;
+		var espaco = tamanho;
+		
+		for(var i=0; i < tamanho; i++){
+			window.document.write("<div>")
+            for(var j = 0; j < espaco; j++){
+                window.document.write("&nbsp");
+            }
+            for(var l = 0; l < simbolo; l++){
+               window.document.write("#");
+            }
+			window.document.write("</div><br>");
+            simbolo += 2;
+            espaco -= 1;
+        }
+	</script>
+  </body>
+</html>
