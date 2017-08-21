@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agenda Contatos</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script type='text/javascript' src='js/jquery-3.1.1.min.js'></script>
+    <script type="text/javascript" src="js/funcoes.js"></script>
+</head>
+<body>
+
+    <h1>Agenda Contatos</h1>
+    
+    <form id="formCadastro" style="margin: auto; margin-top: 20px; border:solid 1px; text-align:left; border-collapse:collapse;">
+        <table>
+            <tr>
+                <td>
+                    <label for="txtCodigo">Código:</label>
+                </td>
+                <td>
+                    <input type="text" id="txtCodigo"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtNome">Nome:</label>
+                </td>
+                <td>
+                    <input type="text" id="txtNome"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtEmail">Email:</label>
+                </td>
+                <td>
+                    <input type="text" id="txtEmail"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtTelefone">Telefone:</label>
+                </td>
+                <td>
+                    <input type="text" id="txtTelefone"/>
+                </td>
+            </tr>
+          
+            <tfoot>
+                <td colspan="2">
+                    <input type="submit" value="Salvar" id="btnSalvar"/>
+                    <input type="button" id="btnListar" ="Listar" value="Listar">
+                </td>
+            </tfoot>
+        </table>
+    </form>
+
+    <div id="formPesquisar" style="margin: auto; margin-top: 20px; border:solid 1px; text-align:left; border-collapse:collapse;">
+        <label>Pesquisar: </label>
+        <input type="text" id="txtPesquisar">
+        <input type="button" value="Pesquisar" id="btnPesquisar">
+    </div>
+
+    <table id="tblListar" style="margin: auto; margin-top: 20px; width:100%; border:solid 1px; text-align:left; border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>
