@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<title>Maior Valor Array</title>
+	<title>Pirâmide</title>
   </head>
   <body>
 	<h2> Pirâmide </h2>
 	
 	<script type="text/javascript">
 		
-		var tamanho = 9;
-        var simbolo = 1;
-		var espaco = tamanho;
+		//Revealing Module Pattern
+		var Piramide = (function(){
+			
+			var _simbolo = 1;
+			var _espaco = 0;
+			
+			var _gerar = function(tamanhoPiramide){
+				_espaco = tamanhoPiramide;
+				for(var i=0; i < tamanhoPiramide; i++){				
+					window.document.write("<div>");
+					_adicionarEspacos();					
+					_adicionarSimbolos();					
+					_atualizarVariaveis();
+					window.document.write("</div>");				
+				}		
+			};
+			
+			var _adicionarEspacos = function(){
+				for(var j = 0; j < _espaco; j++){
+					window.document.write("&nbsp;");
+				}
+			};
+			
+			var _adicionarSimbolos = function(){
+				for(var l = 0; l < _simbolo; l++){
+					window.document.write("#");
+				}
+			};
+			
+			var _atualizarVariaveis = function(){
+				_simbolo += 2;
+				_espaco -= 1;
+			};
+
+			return {
+				gerar: _gerar
+			};	
+			
+		})();
 		
-		for(var i=0; i < tamanho; i++){
-			window.document.write("<div>")
-            for(var j = 0; j < espaco; j++){
-                window.document.write("&nbsp");
-            }
-            for(var l = 0; l < simbolo; l++){
-               window.document.write("#");
-            }
-			window.document.write("</div><br>");
-            simbolo += 2;
-            espaco -= 1;
-        }
+		Piramide.gerar(10);	
+		
 	</script>
   </body>
 </html>
