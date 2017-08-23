@@ -9,22 +9,21 @@
 	
 	<script type="text/javascript">
 	
-		var div = document.getElementById("resposta");		
+		var div = document.getElementById("resposta");
+		var numerosSorteados = new Array();
 		
-		var contador = 0;
-		var lista = new Array();
-		var aleatorio = 0;
-		
-		while(contador < 6)
-		{
-		  aleatorio = Math.floor(Math.random() * 60);
-		  if(lista.indexOf(aleatorio) === -1 || lista.length === 0){
-			lista.push(aleatorio);
-			contador = contador + 1;
-		  }
+		var sortear = function(){
+			for(var i = 0; i < 6;){
+			  var aleatorio = Math.floor(Math.random() * 60);
+			  if(numerosSorteados.indexOf(aleatorio) === -1){
+				numerosSorteados.push(aleatorio);
+				i++;
+			  }
+			}
 		}
 		
-		div.innerHTML = lista;
+		sortear();
+		div.innerHTML = numerosSorteados;
 
 	</script>
   </body>
