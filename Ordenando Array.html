@@ -13,19 +13,33 @@
 		var div = document.getElementById("resposta");
 		var vetor =  [10, 3, 2, 4, 20, 11];
 		
-		var aux, i, j = 0;
+		var Array = (function(){
+			
+			var inverterPosicao = function(indice){
+				aux=vetor[i];
+				vetor[i]=vetor[i+1];
+				vetor[i+1]=aux;
 		
-	
-		for(j=6; j>=1; j--){
-			for(i=0; i<j; i++){
-				if(vetor[i] > vetor[i+1]){
-					aux=vetor[i];
-					vetor[i]=vetor[i+1];
-					vetor[i+1]=aux;
+			}
+		
+			var ordenar = function(){
+				for(j=0; j < vetor.length; j++){
+					for(i=0; i<j; i++){
+						if(vetor[i] > vetor[i+1]){
+							inverterPosicao(i);
+						}
+					}
 				}
 			}
-		}
+			
+			return {
+				ordenar : ordenar
+			}
+		})();
 		
+		
+		
+		Array.ordenar();
 		div.innerHTML = "Array ordenado: [" + vetor + "]";
 
 	</script>
